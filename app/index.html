@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phones for Angular</title>
+
+    <link rel="stylesheet" href="libs/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+<div id="root" class="page-wrap">
+    <div class="container">
+        <div class="row">
+            <div data-component="phones-control" class="col-md-2">
+                <div class="form-group">
+                    <label for="search-phones">Search:</label>
+                    <input class="form-control" type="text" data-control="search" id="search-phones">
+                    <label for="search-phones">Sorting:</label>
+                    <select class="form-control" type="text" data-control="search" id="sort-phones"></select>
+                </div>
+            </div>
+
+            <div class="col-md-9 offset-1">
+                <ul data-component="phones-list"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/template" id="phone-item-tmpl">
+    <li class="row phone-item border border-dark">
+        <div class="col-md-2">
+            <img class="card-img img-responsive" src="<%=imageUrl%>" alt="">
+        </div>
+        <div class="col-md-10">
+            <a href="/#!/<%=id%>"><%=name%></a>
+            <p><%=snippet%></p>
+        </div>
+    </li>
+</script>
+
+<script type="text/template" id="page-phone-tmpl">
+    <div class="card">
+        <img class="card-img-top" src="<%=imageUrl%>" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><%=name%></h5>
+            <p class="card-text">
+                <%=snippet%>
+            </p>
+        </div>
+    </div>
+</script>
+
+
+<script defer src="libs/lodash.js"></script>
+<script defer src="data/phones.js"></script>
+
+<script defer src="js/components/controls.js"></script>
+<script defer src="js/components/list.js"></script>
+<script defer src="js/components/page-list.js"></script>
+<script defer src="js/components/page-phone.js"></script>
+
+<script defer src="js/app.js"></script>
+
+</body>
+</html>
