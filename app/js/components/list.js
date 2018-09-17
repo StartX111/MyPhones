@@ -10,29 +10,35 @@ class List {
         let sort = document.getElementById('sort-phones');
 
         switch (sort.options[sort.selectedIndex].value) {
-            case('no sorting'):
-                break;
             case('age'):
-                data.sort(function(a,b){
-                    
+                data.sort(function compareAge(personA, personB){
+                    return personA['age'] - personB['age'];
                 });
-                console.log('age');
-
+                break;
+            case('old age'):
+                data.sort(function compareAge(personA, personB){
+                    return personB['age'] - personA['age'];
+                });
                 break;
             case('sort-A-Z'):
-                console.log('A-Z');
-                data.reverse();
+                data.sort(function compareAge(personA, personB){
+                    return personA['name'].toLowerCase() - personB['name'].toLowerCase();
+                });
                 break;
             case('sort-Z-A'):
-                console.log('Z-A');
+                data.sort(function compareAge(personA, personB){
+                    return personA['name'] - personB['name'];
+                });
                 data.reverse();
                 break;
             default:
                 break;
         }
-
+        console.log('--------------------');
         data.forEach((item) => {
+            console.log(item['name'].toLowerCase());
             result += this.tmpl(item);
+
         });
         this.el.innerHTML = result;
     }
