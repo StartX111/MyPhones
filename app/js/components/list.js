@@ -22,12 +22,12 @@ class List {
                 break;
             case('sort-A-Z'):
                 data.sort(function compareAge(personA, personB){
-                    return personA['name'].toLowerCase() - personB['name'].toLowerCase();
+                    return personA['name'].toLowerCase() > personB['name'].toLowerCase();
                 });
                 break;
             case('sort-Z-A'):
                 data.sort(function compareAge(personA, personB){
-                    return personA['name'] - personB['name'];
+                    return personA['name'].toLowerCase() > personB['name'].toLowerCase();
                 });
                 data.reverse();
                 break;
