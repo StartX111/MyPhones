@@ -5,11 +5,7 @@ class PagePhone {
         this.tmpl = _.template(options.tmpl.innerHTML);
         this.id = options.id;
 
-        if (!!this.id) {
-            this.init();
-        }
-
-        this.el.addEventListener('click', () => location.reload(true));
+        this.init();
     }
 
     init() {

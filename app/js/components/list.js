@@ -34,11 +34,8 @@ class List {
             default:
                 break;
         }
-        console.log('--------------------');
         data.forEach((item) => {
-            console.log(item['name'].toLowerCase());
             result += this.tmpl(item);
-
         });
         this.el.innerHTML = result;
     }
