@@ -27,7 +27,7 @@ class PageList {
 
 	search(event) {
 		const value = event.detail.value;
-		if (value){
+		if (value) {
 			const re = new RegExp(value, 'i');
 			const filteredPhones = this.phones.filter((phone) => {
 				return re.test(phone.name);
@@ -41,26 +41,27 @@ class PageList {
 	sort(event) {
 		switch (event.detail.nameSort) {
 			case('age'):
-				this.localPhones.sort(function compareAge(personA, personB){
+				this.localPhones.sort(function compareAge(personA, personB) {
 					return personA['age'] - personB['age'];
 				});
 				break;
 			case('old age'):
-				this.localPhones.sort(function compareAge(personA, personB){
+				this.localPhones.sort(function compareAge(personA, personB) {
 					return personB['age'] - personA['age'];
 				});
 				break;
-			case('name-A-Z'):
-				this.localPhones.sort(function compareAge(personA, personB){
+			case('sort-A-Z'):
+				this.localPhones.sort(function compareAge(personA, personB) {
 					return personA['name'].toLowerCase().localeCompare(personB['name'].toLowerCase());
 				});
 				break;
-			case('name-Z-A'):
-				this.localPhones.sort(function compareAge(personA, personB){
+			case('sort-Z-A'):
+				this.localPhones.sort(function compareAge(personA, personB) {
 					return personB['name'].toLowerCase().localeCompare(personA['name'].toLowerCase());
 				});
 				break;
-			default: break;
+			default:
+				break;
 		}
 
 		this.list.showList(this.localPhones);

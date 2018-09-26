@@ -26,8 +26,8 @@
                     <select class="form-control" name="sort-phones" data-control="sort-phones">
                         <option value="age">age</option>
                         <option value="old age">old age</option>
-                        <option value="name-A-Z">name a-z</option>
-                        <option value="name-Z-A">name z-a</option>
+                        <option value="sort-A-Z">name a-z</option>
+                        <option value="sort-Z-A">name z-a</option>
                     </select>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             <img class="card-img img-responsive" src="<%=imageUrl%>" alt="">
         </div>
         <div class="col-md-10">
-            <a href="/#phones/<%=id%>"><%=name%></a>
+            <a href="<%=window.location.origin%><%=window.location.pathname%>#phones/<%=id%>"><%=name%></a>
             <p><%=snippet%></p>
         </div>
     </li>
