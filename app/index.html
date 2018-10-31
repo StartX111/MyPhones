@@ -11,6 +11,11 @@
 
 
 <div id="root" class="page-wrap">
+
+</div>
+
+
+<script type="text/template" id="templ">
     <div class="container">
         <div class="row">
             <div data-component="phones-control" class="col-md-2">
@@ -18,11 +23,11 @@
                     <label for="search-phones">Search:</label>
                     <input class="form-control" type="text" data-control="search" id="search-phones">
                     <label for="search-phones">Sorting:</label>
-                    <select class="form-control" name="sort-phones" id="sort-phones">
+                    <select class="form-control" name="sort-phones" data-control="sort-phones">
                         <option value="age">age</option>
                         <option value="old age">old age</option>
-                        <option value="sort-A-Z">name a-z</option>
-                        <option value="sort-Z-A">name z-a</option>
+                        <option value="name-A-Z">name a-z</option>
+                        <option value="name-Z-A">name z-a</option>
                     </select>
                 </div>
             </div>
@@ -32,9 +37,7 @@
             </div>
         </div>
     </div>
-</div>
-
-
+</script>
 
 <script type="text/template" id="phone-item-tmpl">
     <li class="row phone-item border border-dark">
@@ -42,7 +45,7 @@
             <img class="card-img img-responsive" src="<%=imageUrl%>" alt="">
         </div>
         <div class="col-md-10">
-            <a href="<%window.location%>/#phones/<%=id%>"><%=name%></a>
+            <a href="/#phones/<%=id%>"><%=name%></a>
             <p><%=snippet%></p>
         </div>
     </li>
